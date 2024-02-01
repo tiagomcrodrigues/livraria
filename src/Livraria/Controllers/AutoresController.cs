@@ -2,6 +2,7 @@
 using Livraria.Models.Request;
 using Livraria.Models.Response;
 using Livraria.Service.Data.Entities;
+using Livraria.Service.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,34 +13,34 @@ namespace Livraria.Controllers
     public class AutoresController : ControllerBase
     {
         private readonly DbLivraria _dbLivraria;
+        private readonly IAutoresService _autoresService;
 
-        public AutoresController(DbLivraria ctx)
+        public AutoresController(DbLivraria ctx, IAutoresService autoresService)
         {
             _dbLivraria = ctx;
+            _autoresService = autoresService;
         }
 
         [HttpGet]
         public IActionResult Listar()
         {
-            IEnumerable<AutoresResponse> result = _dbLivraria.Autores
+            IEnumerable<AutoresResponse> result = _autoresService.GetAll()
                             .Select(autores => autores.Map());
 
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult criar([FromBody] AutoresRequest request)
+        public IActionResult Criar([FromBody] AutoresRequest request)
         {
             try
             {
 
                 if (!ModelState.IsValid)
-                    return BadRequest(ModelState.CapturaCriticas);
+                    return BadRequest(ModelState.CapturaCriticas());
 
-                Autores autores = request.Map();
-                _dbLivraria.Autores.Add(autores);
-                _dbLivraria.SaveChanges();
-                return Created(uri: string.Empty, new { id = autores.Id.ToString() });
+                var id = _autoresService.Add(request.Map());
+                return Created(uri: string.Empty, new { id = id.ToString() });
             }
             catch (Exception ex)
             {
@@ -53,7 +54,7 @@ namespace Livraria.Controllers
         [HttpGet("{id:int}")]
         public IActionResult ListarId([FromRoute] int id)
         {
-            var autor = _dbLivraria.Autores.Where(autor => autor.Id == id).FirstOrDefault();
+            var autor = _autoresService.GetById(id);
 
             if (autor == null)
                 return NotFound("Autor não encontredo");
@@ -69,16 +70,12 @@ namespace Livraria.Controllers
             try
             {
                 if (!ModelState.IsValid)
-                    return BadRequest(ModelState.CapturaCriticas);
+                    return BadRequest(ModelState.CapturaCriticas());
 
-                var autor = _dbLivraria.Autores.Where(autor => autor.Id == id).FirstOrDefault();
-                if (autor == null)
-                    return NotFound("Autor não encontredo");
+                if (_autoresService.Update(id, request.Nome))
+                    return NoContent();
 
-                autor.Nome = request.Nome;
-
-                _dbLivraria.SaveChanges();
-                return NoContent();
+                return NotFound("Autor não encontrado");
 
             }
             catch (Exception ex)
@@ -95,15 +92,10 @@ namespace Livraria.Controllers
         [HttpDelete("{id:int}")]
         public IActionResult Delete([FromRoute] int id)
         {
-            var autor = _dbLivraria.Autores.Where(autores => autores.Id == id).FirstOrDefault();
-            if (autor is null)
-                return NotFound("Autor não encontrado");
+            if (_autoresService.Delete(id))
+                return NoContent();
 
-            _dbLivraria.Autores.Remove(autor);
-            _dbLivraria.SaveChanges();
-            return NoContent();
-
-
+            return NotFound("Autor não encontrado");
         }
 
 

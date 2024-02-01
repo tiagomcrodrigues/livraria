@@ -33,7 +33,7 @@ namespace Livraria.Controllers
             try
             {
                 if (!ModelState.IsValid)
-                    return BadRequest(ModelState.CapturaCriticas);
+                    return BadRequest(ModelState.CapturaCriticas());
 
                Pessoas pessoas =  request.Map();
                 _dbLivraria.Pessoas.Add(pessoas);
@@ -69,7 +69,7 @@ namespace Livraria.Controllers
             try
             {
                 if (!ModelState.IsValid)
-                    return BadRequest(ModelState.CapturaCriticas);
+                    return BadRequest(ModelState.CapturaCriticas());
 
                 var pessoa = _dbLivraria.Pessoas.Where(pessoa => pessoa.Id == id).FirstOrDefault();
                 if (pessoa == null)

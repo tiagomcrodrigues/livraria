@@ -1,4 +1,5 @@
 using Livraria.Service.Data.Entities;
+using Livraria.Service.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Livraria
@@ -27,6 +28,8 @@ namespace Livraria
                 )
                 .UseLazyLoadingProxies();
             });
+
+            builder.Services.AddScoped<IAutoresService, AutoresService>();
 
             var app = builder.Build();
 

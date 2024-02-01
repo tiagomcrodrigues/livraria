@@ -32,7 +32,7 @@ namespace Livraria.Controllers
             try
             {
                 if (!ModelState.IsValid)
-                    return BadRequest(ModelState.CapturaCriticas);
+                    return BadRequest(ModelState.CapturaCriticas());
 
                 Livros livros = request.Map();
                 _dbLivraria.Livros.Add(livros);
