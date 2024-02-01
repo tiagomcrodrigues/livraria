@@ -1,8 +1,8 @@
-﻿using Livraria.Data.Entities;
+﻿using Livraria.Service.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Livraria.Data.Configuarations
+namespace Livraria.Service.Data.Configuarations
 {
     public class LivrosConfigurations : IEntityTypeConfiguration<Livros>
     {

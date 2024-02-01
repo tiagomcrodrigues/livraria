@@ -1,7 +1,7 @@
-﻿using System.Text.Json;
-using TesteQuebraTudo;
+﻿using Livraria.Service.Models;
+using System.Text.Json;
 
-namespace Livraria.Tools
+namespace Livraria.Service.Tools
 {
     public static class Ferramentas
     {

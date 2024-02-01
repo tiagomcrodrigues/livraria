@@ -1,5 +1,4 @@
-
-using Livraria.Data.Entities;
+using Livraria.Service.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Livraria

@@ -1,8 +1,8 @@
-﻿using Livraria.Data.Entities;
+﻿using Livraria.Service.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Livraria.Data.Configuarations
+namespace Livraria.Service.Data.Configuarations
 {
     public class PessoasConfigurations : IEntityTypeConfiguration<Pessoas>
     {
@@ -22,7 +22,7 @@ namespace Livraria.Data.Configuarations
                 .IsRequired();
 
             b.Property(b => b.Cpf)
-                .HasColumnName(nameof (Pessoas.Cpf))
+                .HasColumnName(nameof(Pessoas.Cpf))
                 .HasMaxLength(11)
                 .IsUnicode(false)
                 .IsRequired();

@@ -1,9 +1,9 @@
-﻿using Livraria.Data.Entities;
-using Livraria.Models.Request;
+﻿using Livraria.Models.Request;
 using Livraria.Models.Response;
+using Livraria.Service.Data.Entities;
+using Livraria.Service.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using System.Text.Json;
-using TesteQuebraTudo;
 
 namespace Livraria.Extensions
 {

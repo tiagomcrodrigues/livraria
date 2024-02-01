@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Livraria", "Livraria\Livraria.csproj", "{3C363395-91D6-40FF-A160-8D15E1FA28E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Livraria.Service", "Livraria.Servise\Livraria.Service.csproj", "{BD6E268B-02D3-4C7F-8C1B-3E41B821CEC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3C363395-91D6-40FF-A160-8D15E1FA28E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C363395-91D6-40FF-A160-8D15E1FA28E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C363395-91D6-40FF-A160-8D15E1FA28E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6E268B-02D3-4C7F-8C1B-3E41B821CEC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6E268B-02D3-4C7F-8C1B-3E41B821CEC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6E268B-02D3-4C7F-8C1B-3E41B821CEC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6E268B-02D3-4C7F-8C1B-3E41B821CEC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

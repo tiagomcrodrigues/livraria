@@ -1,4 +1,4 @@
-﻿namespace Livraria.Data.Entities
+﻿namespace Livraria.Service.Data.Entities
 {
     public class Autores
     {
@@ -12,7 +12,7 @@
 
         public int Id { get; set; }
 
-        public string Nome{ get; set; }
+        public string Nome { get; set; }
 
         public virtual ICollection<Livros> Livros { get; set; }
     }

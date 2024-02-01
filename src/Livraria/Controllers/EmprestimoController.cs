@@ -1,7 +1,7 @@
-﻿using Livraria.Data.Entities;
-using Livraria.Extensions;
+﻿using Livraria.Extensions;
 using Livraria.Models.Request;
 using Livraria.Models.Response;
+using Livraria.Service.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860

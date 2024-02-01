@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Livraria.Migrations
+namespace Livraria.Service.Migrations
 {
     /// <inheritdoc />
     public partial class CriacaoTabelaLivros : Migration

@@ -1,7 +1,7 @@
-﻿using Livraria.Data.Configuarations;
+﻿using Livraria.Service.Data.Configuarations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Livraria.Data.Entities
+namespace Livraria.Service.Data.Entities
 {
     public class DbLivraria : DbContext
     {
@@ -21,6 +21,6 @@ namespace Livraria.Data.Entities
         public DbSet<Livros> Livros { get; set; }
         public DbSet<Emprestimos> Emprestimos { get; set; }
 
-        public DbSet<Pessoas> Pessoas { get ; set; }
+        public DbSet<Pessoas> Pessoas { get; set; }
     }
 }

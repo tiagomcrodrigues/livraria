@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Livraria.Migrations
+namespace Livraria.Service.Migrations
 {
     /// <inheritdoc />
     public partial class PessoasCorrecao : Migration

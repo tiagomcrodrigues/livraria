@@ -1,9 +1,8 @@
-﻿
-namespace Livraria.Data.Entities
+﻿namespace Livraria.Service.Data.Entities
 {
     public class Pessoas
     {
-        public Pessoas(){}
+        public Pessoas() { }
 
         public Pessoas(int id)
         {
@@ -18,6 +17,6 @@ namespace Livraria.Data.Entities
         public string Complemento { get; set; }
         public string Telefone { get; set; }
 
-         public virtual  ICollection<Emprestimos> Emprestimos { get; set; }
+        public virtual ICollection<Emprestimos> Emprestimos { get; set; }
     }
 }

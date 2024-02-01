@@ -1,8 +1,8 @@
-﻿using Livraria.Data.Entities;
+﻿using Livraria.Service.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Livraria.Data.Configuarations
+namespace Livraria.Service.Data.Configuarations
 {
     public class EmprestimosConfigurations : IEntityTypeConfiguration<Emprestimos>
     {
@@ -35,10 +35,10 @@ namespace Livraria.Data.Configuarations
             b.Property(b => b.DataDevolucao)
                 .HasColumnName(nameof(Emprestimos.DataDevolucao));
 
-             b.HasOne(o => o.Pessoas)
-                .WithMany(d => d.Emprestimos)
-                .HasForeignKey(fk => fk.PessoaId)
-                .OnDelete(DeleteBehavior.Restrict);
+            b.HasOne(o => o.Pessoas)
+               .WithMany(d => d.Emprestimos)
+               .HasForeignKey(fk => fk.PessoaId)
+               .OnDelete(DeleteBehavior.Restrict);
 
             b.HasOne(o => o.Livros)
                 .WithMany(d => d.Emprestimos)

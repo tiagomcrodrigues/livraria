@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-namespace TesteQuebraTudo
+namespace Livraria.Service.Models
 {
     public class CepResponse
     {

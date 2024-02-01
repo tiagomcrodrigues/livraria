@@ -1,4 +1,4 @@
-﻿namespace Livraria.Data.Entities
+﻿namespace Livraria.Service.Data.Entities
 {
     public class Emprestimos
     {

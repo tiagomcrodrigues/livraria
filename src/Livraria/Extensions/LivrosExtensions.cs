@@ -1,6 +1,6 @@
-﻿using Livraria.Data.Entities;
-using Livraria.Models.Request;
+﻿using Livraria.Models.Request;
 using Livraria.Models.Response;
+using Livraria.Service.Data.Entities;
 
 namespace Livraria.Extensions
 {

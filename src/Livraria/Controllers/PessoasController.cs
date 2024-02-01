@@ -1,8 +1,8 @@
-﻿using Livraria.Data.Entities;
-using Livraria.Extensions;
+﻿using Livraria.Extensions;
 using Livraria.Models.Request;
 using Livraria.Models.Response;
-using Livraria.Tools;
+using Livraria.Service.Data.Entities;
+using Livraria.Service.Tools;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Livraria.Controllers

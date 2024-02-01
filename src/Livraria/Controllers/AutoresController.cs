@@ -1,7 +1,7 @@
-﻿using Livraria.Data.Entities;
-using Livraria.Extensions;
+﻿using Livraria.Extensions;
 using Livraria.Models.Request;
 using Livraria.Models.Response;
+using Livraria.Service.Data.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

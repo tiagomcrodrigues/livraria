@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using TesteQuebraTudo;
+﻿using Livraria.Service.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Livraria.Models.Response
 {
@@ -13,10 +13,6 @@ namespace Livraria.Models.Response
 
         
         public CepResponse Endereco { get; set; }
-
-        public string Numero { get; set; }
-
-        public string Complemento { get; set; }
 
         public string Telefone { get; set; }
     }

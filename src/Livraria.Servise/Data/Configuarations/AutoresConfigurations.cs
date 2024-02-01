@@ -1,8 +1,8 @@
-﻿using Livraria.Data.Entities;
+﻿using Livraria.Service.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Livraria.Data.Configuarations
+namespace Livraria.Service.Data.Configuarations
 {
     public class AutoresConfigurations : IEntityTypeConfiguration<Autores>
     {
@@ -24,7 +24,7 @@ namespace Livraria.Data.Configuarations
             b.HasIndex(Autores => Autores.Nome)
                 .HasDatabaseName($"UK_{nameof(Autores)}_{nameof(Autores.Nome)}")
                 .IsUnique();
-            
+
         }
     }
 }
